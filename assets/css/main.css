@@ -1,0 +1,249 @@
+.header{
+    height: 120px;
+    background-image: linear-gradient(0, #fe6432, #f53e2d);
+}
+
+.header__nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.header__nav-item{
+    margin: 0 8px;
+    position: relative;
+}
+
+
+.header__nav-item,
+.header__nav-link{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: var(--white-color);   
+    text-decoration: none;
+    font-weight: 300; 
+}
+
+.header__nav-item:hover,
+.header__nav-link:hover{
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+.header--bold{
+    font-weight: 400;
+}
+
+.head--separate::after{
+    content: "";
+    height: 16px;
+    width: 0;
+    border-left: 1px solid hsla(0,0%,100%,.22);
+    border-right: 1px solid hsla(0,0%,100%,.22);
+    position: absolute;
+    left: -10px;
+    top: calc(50% - 8px);
+}
+
+.header__link-society{
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 0 4px;
+}
+
+.header__nav--no-pointer{
+    cursor: text;
+    color: var(--white-color);
+}
+
+.header__link-society:hover{
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+/* header QR code */
+
+.header__qr{
+    width: 180px;
+    background-color: var(--white-color);
+    position: absolute;
+    left: 0;
+    top: 200%;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    animation: fadeIn ease-in 0.5s;
+}
+
+.heade__nav--has-qr:hover .header__qr{
+    display: block;
+}
+
+.header__qr::before{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: -30px;
+    content: "";
+    display: block;
+    /* background-color: black; */
+    left: 0;
+}
+
+.header__qr-img{
+    width: 100%;
+}
+
+.header__qr-app{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header__qr-download-img{
+    height: 16px;
+}
+
+/* Header notification  */
+.header__notifi{
+    position: absolute;
+    top: 200%;
+    width: 404px;
+    border: 1px solid #D3D3D3;
+    background-color: var(--white-color);
+    right: 0;
+    user-select: none;
+    animation: headerNotifi ease-in 0.2s;
+    transform-origin:  90% top;
+    display: none;
+    will-change: opcity, transform;
+}
+
+.header__nav-item--has-notifi:hover .header__notifi{
+    display: block;
+}
+
+.header__notifi::before{
+    content: "";
+    border-width: 20px 30px;
+    border-style:  solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    top: -30px;
+    right: 12px;
+}
+
+.header__notifi::after{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: -30px;
+    content: "";
+    display: block;
+    /* background-color: black; */
+    right: 0;
+}
+
+@keyframes headerNotifi{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.header__notifi-header{
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.header__notifi-header h3{
+    color: #666;
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+}
+
+.header__notifi-list{
+    padding-left: 0;
+
+}
+
+.header__notifi-item{
+    display: flex;
+
+}
+
+.header__notifi-item:hover{
+   background-color: #f7f7f7;
+}
+
+.header__notifi-link{
+    display: flex;
+    padding: 12px;
+    width: 100%;
+    text-decoration: none;
+    background-color: rgba(238, 75, 43, 0.1);
+}
+
+.header__notifi-info{
+    margin-left: 12px;
+}
+
+.header__notifi-img{
+    width: 48px;
+    object-fit: contain;
+}
+
+.header__notifi-name{
+    display: block;
+    color:var(--black-color) ;
+    font-size: 1.4rem;
+    margin: 12px 0;
+    line-height: 1.8rem;
+}
+
+.header__notifi-descriotion{
+    display: block;
+    font-size: 1.2rem;
+    margin: 12px 0;
+    color: #756F6E;
+}
+
+.header__notifi-footer{
+    display: flex;
+    
+}
+
+.header__notifi-footer-btn{
+    text-decoration: none;
+    color: var(--black-color);
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
